@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :users
+  get '/auth/facebook/callback' =>'sessions#create'
+delete '/logout', to: 'sessions#destroy'
   root 'welcome#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
